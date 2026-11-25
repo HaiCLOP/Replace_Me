@@ -1,0 +1,1 @@
+# Words that look like names but must never be hidden (one per line), e.g. a game or band name.
