@@ -1,0 +1,46 @@
+# ── YOUR DATA: never committed ───────────────────────────────────────────────
+# Everything you put in me/ (your chat export, profile, notes on people) stays on your machine.
+# Only the empty templates and READMEs in me/ are part of the repo.
+me/*
+!me/README.md
+!me/profile.example.yaml
+!me/now.example.md
+!me/mask_extra.example.txt
+!me/mask_keep.example.txt
+!me/export/
+me/export/*
+!me/export/README.md
+!me/people/
+me/people/*
+!me/people/README.md
+
+# what the tools build from your data
+.data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.npy
+browser_profile/
+logs/
+reports/
+
+# secrets
+.env
+.env.*
+!.env.example
+kaggle.json
+
+# fine-tune outputs (contain your chats)
+finetune/out/
+*.gguf
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+dist/
+build/

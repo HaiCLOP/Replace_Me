@@ -1,0 +1,34 @@
+[project]
+name = "replace-me"
+version = "0.1.0"
+description = "Build an AI that texts like you: learns your style from your chat export, replies to your Instagram DMs, and is measured with a blind judge."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27",
+    "numpy>=1.26",
+    "pydantic>=2.6",
+    "pydantic-settings>=2.2",
+    "pyyaml>=6.0",
+    "playwright>=1.44",
+    "fastembed>=0.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+finetune = ["kaggle>=1.7"]
+
+[project.scripts]
+replace-me = "replace_me.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["replace_me*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
