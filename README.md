@@ -1,5 +1,7 @@
 # Replace Me
 
+[![tests](https://github.com/HaiCLOP/Replace_Me/actions/workflows/tests.yml/badge.svg)](https://github.com/HaiCLOP/Replace_Me/actions/workflows/tests.yml)
+
 **Build an AI copy of yourself that answers your Instagram DMs the way you actually text.**
 
 It learns from your own chat export: your words, spelling, slang, how long your replies are, who you swear with
