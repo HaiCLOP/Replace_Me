@@ -65,7 +65,9 @@ async def in_your_voice(meaning: list[str], tail: Sequence[str], incoming: Seque
     except Exception as e:
         logger.warning("voice.failed", error=str(e)[:160])
         return []
-    lines = [l.strip() for l in (res.content or "").splitlines() if l.strip() and not l.lower().startswith(("them:", "reply as"))][:5]
+    lines = [l.strip() for l in (res.content or "").splitlines() if l.strip() and not l.lower().startswith(("them:", "you:", "reply as"))]
+    # it learned "[photo]" / "[sent you a reel]" placeholders from the export, but it can't send media
+    lines = [l for l in lines if not re.fullmatch(r"\[[^\]]*\]", l)][:5]
     masker = get_masker()
     if lines and masker is not None and masker.names_new_people(" ".join(lines), " ".join(meaning) + " " + " ".join(tail) + " " + who):
         logger.info("voice.new_person_dropped")

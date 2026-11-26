@@ -46,6 +46,12 @@ class Example:
         return "\n".join(lines + [f"You: {r}" for r in self.reply])
 
 
+def _scrub(text: str) -> str:
+    for p in _PRIVATE:
+        text = p.sub("[number]" if p is _PRIVATE[0] else "[email]", text)
+    return text
+
+
 def _turns(chat: Chat) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     for m in chat.messages:
@@ -76,8 +82,10 @@ def build(chats: Sequence[Chat], out_dir: Path, swear_pattern: str = DEFAULT_SWE
             if any(p.search(" ".join(reply)) for p in _PRIVATE):
                 continue
             bursts.append(len(reply))
-            ctx = [{"who": c["who"], "texts": c["texts"][-4:]} for c in turns[max(0, i - CONTEXT_TURNS):i]]
-            examples.append(Example(chat=chat.folder, context=ctx, reply=reply, key=" ".join(turns[i - 1]["texts"][-3:])[:300]))
+            # their side is shown to the model as an example too: their numbers and emails never go in
+            ctx = [{"who": c["who"], "texts": [_scrub(x) for x in c["texts"][-4:]]} for c in turns[max(0, i - CONTEXT_TURNS):i]]
+            key = _scrub(" ".join(turns[i - 1]["texts"][-3:]))[:300]
+            examples.append(Example(chat=chat.folder, context=ctx, reply=reply, key=key))
     out_dir.mkdir(parents=True, exist_ok=True)
     with (out_dir / "corpus.jsonl").open("w", encoding="utf-8") as fh:
         for e in examples:

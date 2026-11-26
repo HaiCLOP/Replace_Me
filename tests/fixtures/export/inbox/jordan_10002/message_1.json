@@ -1,0 +1,47 @@
+{
+ "participants": [
+  {
+   "name": "Jordan Lee"
+  },
+  {
+   "name": "Alex Example"
+  }
+ ],
+ "messages": [
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760003723000,
+   "content": "np"
+  },
+  {
+   "sender_name": "Jordan Lee",
+   "timestamp_ms": 1760003708000,
+   "content": "thanks man"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760003668000,
+   "content": "[photo]"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760003665000,
+   "content": "sending"
+  },
+  {
+   "sender_name": "Jordan Lee",
+   "timestamp_ms": 1760003640000,
+   "content": "notes for stats?"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760003630000,
+   "content": "heyy"
+  },
+  {
+   "sender_name": "Jordan Lee",
+   "timestamp_ms": 1760003600000,
+   "content": "yo"
+  }
+ ]
+}

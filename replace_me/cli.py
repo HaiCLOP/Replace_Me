@@ -8,7 +8,7 @@
     run         reply to your Instagram DMs
     mute        mute|unmute <username>: replies off/on for someone
     eval        blind test: real you vs your copy (see docs/EVALUATION.md)
-    finetune    dataset : build the training set for your own model (docs/FINE_TUNING.md)
+    finetune    dataset | lora-to-gguf : training set + Kaggle notebook for your own model (docs/FINE_TUNING.md)
 """
 
 from __future__ import annotations
@@ -114,7 +114,9 @@ def main() -> None:
     ep.add_argument("--seed", type=int, default=7)
     ep.add_argument("--life", action="store_true", help="give the copy your life around each moment (fair: nothing after it)")
     fp = sub.add_parser("finetune")
-    fp.add_argument("what", choices=["dataset"])
+    fp.add_argument("what", choices=["dataset", "lora-to-gguf"])
+    fp.add_argument("--lora", default="finetune/out/my_lora", help="adapter folder downloaded from Kaggle")
+    fp.add_argument("--out", default="finetune/out/my-lora.gguf")
     a = ap.parse_args()
 
     if a.cmd == "init":
@@ -145,7 +147,12 @@ def main() -> None:
     elif a.cmd == "finetune":
         from replace_me import finetune
 
-        finetune.build_dataset()
+        if a.what == "dataset":
+            finetune.build_dataset()
+        else:
+            from pathlib import Path
+
+            print("wrote", finetune.lora_to_gguf(Path(a.lora), Path(a.out)), "tensors to", a.out)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,102 @@
+{
+ "participants": [
+  {
+   "name": "Sam Rivers"
+  },
+  {
+   "name": "Alex Example"
+  }
+ ],
+ "messages": [
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760097588000,
+   "content": "ok calling"
+  },
+  {
+   "sender_name": "Sam Rivers",
+   "timestamp_ms": 1760097568000,
+   "content": "call me at 9876543210"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760097468000,
+   "content": "he lost his keys again"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760097462000,
+   "content": "nothing much"
+  },
+  {
+   "sender_name": "Sam Rivers",
+   "timestamp_ms": 1760097412000,
+   "content": "what happened with jordan yesterday"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760090212000,
+   "content": "what"
+  },
+  {
+   "sender_name": "Sam Rivers",
+   "timestamp_ms": 1760090182000,
+   "content": "are you a bot"
+  },
+  {
+   "sender_name": "Sam Rivers",
+   "timestamp_ms": 1760086582000,
+   "content": "lol"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760086572000,
+   "content": "contact form is killing me"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760086567000,
+   "content": "bro no"
+  },
+  {
+   "sender_name": "Sam Rivers",
+   "timestamp_ms": 1760086507000,
+   "content": "did you finish the website"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760000107000,
+   "content": "ok ok"
+  },
+  {
+   "sender_name": "Sam Rivers",
+   "timestamp_ms": 1760000087000,
+   "content": "bring the ball"
+  },
+  {
+   "sender_name": "Sam Rivers",
+   "timestamp_ms": 1760000083000,
+   "content": "ya 5"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760000053000,
+   "content": "football at 5 right"
+  },
+  {
+   "sender_name": "Alex Example",
+   "timestamp_ms": 1760000045000,
+   "content": "yesss"
+  },
+  {
+   "sender_name": "Sam Rivers",
+   "timestamp_ms": 1760000005000,
+   "content": "you coming sunday?"
+  },
+  {
+   "sender_name": "Sam Rivers",
+   "timestamp_ms": 1760000000000,
+   "content": "hey"
+  }
+ ]
+}
